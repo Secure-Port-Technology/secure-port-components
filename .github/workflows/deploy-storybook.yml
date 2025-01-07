@@ -37,4 +37,4 @@ jobs:
       - name: Build and Deploy Storybook
         env:
           EXPO_PUBLIC_STORYBOOK_ENABLED: "true"
-        run: npm run storybook:deploy
+        run: npm run storybook:deploy -- -u "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
