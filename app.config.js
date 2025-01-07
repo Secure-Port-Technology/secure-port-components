@@ -36,6 +36,7 @@ export default {
     ],
     experiments: {
       typedRoutes: true,
+      baseUrl: "/secure-port-components",
     },
   },
 };
