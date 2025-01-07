@@ -13,8 +13,8 @@ export const SignInScreen = () => {
   const [userType, setUserType] = useState("user");
 
   return (
-    <View className="flex-1 w-4/5 justify-between items-center bg-white py-12">
-      <View className="flex-1 items-center gap-4 w-full">
+    <View className="flex-1 w-4/5 justify-between self-center bg-white m-safe p-safe">
+      <View className="items-center w-full gap-4">
         <Text className="text-2xl font-bold mb-2">Sign in to SPT</Text>
         <Text className="text-center text-gray-500 mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -40,7 +40,7 @@ export const SignInScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <View className="w-full justify-center items-center">
+      <View className="items-center w-full gap-4">
         <Text className="text-gray-500 mb-4">
           Or sign in using a social profile
         </Text>
