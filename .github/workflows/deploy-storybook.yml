@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     permissions:
@@ -34,7 +34,26 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Build and Deploy Storybook
-        env:
-          EXPO_PUBLIC_STORYBOOK_ENABLED: "true"
-        run: npm run storybook:deploy -- -u "${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+      - name: Build Storybook
+        id: build
+        run: npm run storybook:build
+
+      - name: Upload Storybook
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
