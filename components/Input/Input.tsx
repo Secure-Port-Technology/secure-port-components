@@ -25,13 +25,13 @@ export const Input = ({
 
       {secureTextEntry && (
         <Pressable
-          className="absolute right-4 top-4"
+          className="absolute right-4 top-3"
           onPress={() => setShowPassword(!showPassword)}
         >
           {showPassword ? (
-            <Ionicons name="eye-off-outline" size={22} color="gray" />
+            <Ionicons name="eye-off-outline" size={27} color="lightgrey" />
           ) : (
-            <Ionicons name="eye-outline" size={22} color="gray" />
+            <Ionicons name="eye-outline" size={27} color="lightgrey" />
           )}
         </Pressable>
       )}
