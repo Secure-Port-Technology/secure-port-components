@@ -2,6 +2,7 @@ export default {
   expo: {
     name: "secure-port-components",
     slug: "secure-port-components",
+    owner: "secure-port-technology",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/images/icon.png",
