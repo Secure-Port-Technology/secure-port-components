@@ -38,5 +38,10 @@ export default {
       typedRoutes: true,
       baseUrl: "/secure-port-components",
     },
+    extra: {
+      eas: {
+        projectId: "e24443e9-7968-49d6-a223-c7249f19bb70",
+      },
+    },
   },
 };
