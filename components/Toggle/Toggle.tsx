@@ -49,7 +49,7 @@ export const Toggle = ({
 
   return (
     <View
-      className={`flex-row relative border border-gray-300 rounded-full ${className}`}
+      className={`flex-row w-full relative border border-gray-300 rounded-full ${className}`}
     >
       <Animated.View
         className="absolute bg-sky-500 h-full rounded-full"
