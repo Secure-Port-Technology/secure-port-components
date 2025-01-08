@@ -1,11 +1,11 @@
-import { SignInScreen } from "./SignInScreen";
+import { SignUpScreen } from "./SignUpScreen";
 import { SessionProvider } from "@/context/Session";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
-  title: "Screens/SignInScreen",
-  component: SignInScreen,
+  title: "Screens/SignUpScreen",
+  component: SignUpScreen,
   decorators: [
     (Story) => (
       <SessionProvider>
@@ -13,7 +13,7 @@ const meta = {
       </SessionProvider>
     ),
   ],
-} satisfies Meta<typeof SignInScreen>;
+} satisfies Meta<typeof SignUpScreen>;
 
 export default meta;
 

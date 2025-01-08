@@ -9,7 +9,7 @@ import { Screen } from "@/components/Screen/Screen";
 
 import type { UserType } from "@/context/Session";
 
-export const SignInScreen = () => {
+export const SignUpScreen = () => {
   const router = useRouter();
 
   const { userType, setUserType, signIn } = useSession();
@@ -17,7 +17,7 @@ export const SignInScreen = () => {
   return (
     <Screen className="justify-between my-safe-offset-12">
       <View className="items-center gap-8">
-        <Text className="text-2xl font-bold">Sign in to SPT</Text>
+        <Text className="text-2xl font-bold">Sign up to SPT</Text>
         <Text className="text-center text-gray-500">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </Text>
@@ -32,26 +32,30 @@ export const SignInScreen = () => {
         />
 
         <View className="w-full gap-4">
+          <Input placeholder="Organisation name" />
           <Input placeholder="Email Address" />
           <Input placeholder="Password" secureTextEntry />
+          <Input placeholder="Confirm Password" secureTextEntry />
+          <Text className="text-gray-500 text-xs">
+            Password must be at least 8 digits and contain numeric characters
+          </Text>
         </View>
-
-        <TouchableOpacity>
-          <Text className="text-sky-500">Forgot Password?</Text>
-        </TouchableOpacity>
       </View>
 
       <View className="items-center w-full gap-8">
-        <Text className="text-gray-500">Or sign in using a social profile</Text>
+        <Text className="text-gray-500">
+          Or create an account using a social profile
+        </Text>
 
         <View className="flex-row gap-12">
           <Button icon={require("@/assets/images/apple-icon.png")} />
           <Button icon={require("@/assets/images/google-icon.png")} />
         </View>
 
-        <TouchableOpacity onPress={() => router.push("/sign-up")}>
+        <TouchableOpacity onPress={() => router.push("/sign-in")}>
           <Text className="text-gray-500">
-            Don’t have an account? <Text className="text-sky-500">Sign up</Text>
+            Already have an account?{" "}
+            <Text className="text-sky-500">Sign in</Text>
           </Text>
         </TouchableOpacity>
 

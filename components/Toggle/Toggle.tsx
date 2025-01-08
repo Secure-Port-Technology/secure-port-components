@@ -24,17 +24,17 @@ export const Toggle = ({
   onChange,
   className = "",
 }: ToggleProps) => {
-  const translateX = useSharedValue(0);
+  const activeIndex = options.findIndex((option) => option.value === value);
+  const translateX = useSharedValue(activeIndex);
 
   // Calculate and animate to new position when value changes
   React.useEffect(() => {
-    const activeIndex = options.findIndex((option) => option.value === value);
     translateX.value = withSpring(activeIndex, {
       mass: 0.1,
       damping: 15,
       stiffness: 250,
     });
-  }, [value, options]);
+  }, [value, options, activeIndex]);
 
   const pillAnimation = useAnimatedStyle(() => {
     return {
